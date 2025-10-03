@@ -141,7 +141,41 @@ combinarCon2 f1 xs1 xs2
     | null xs1 || null xs2= []
     | otherwise = [f1 (head xs1) (head xs2) ] ++ combinarCon2 f1 (tail xs1) (tail xs2) 
     
+--L
 
+pcdo a = a mod 2 == 0
 
+filtrarLista :: (a -> Bool) -> [a] -> [a]
+filtrarLista pcdo xs1
+    | null xs1= []
+    | pcdo(head xs1)= [(head xs1)] ++ filtrarLista pcdo(tail xs1) 
+    | otherwise =filtrarLista pcdo(tail xs1)
 
+filtrarLista1 :: (a -> Bool) -> [a] -> [a]
+filtrarLista1 pcdo xs1= [x | x<-xs1, pcdo x]
 
+--m
+subLista2 [] z n=[] 
+subLista2 (x:xs) z n= if n>0 && x>z then subLista2 xs z (n-1) else x : subLista2 xs z n
+
+insertarLista xs1 xs2 n
+    |null xs1 =xs2
+    |null xs2 = xs1
+    |n==0 = (head xs2): insertarLista xs1 (tail xs2) n
+    |otherwise = (head xs1) : insertarLista (tail xs1) xs2 (n-1)
+
+--repaso
+
+potenciaPorMultSucesivas a b
+    |b==0 = 1
+    |b==1 = a
+    |otherwise= a * potenciaPorMultSucesivas a (b-1)
+
+invertirLista []=[]
+
+invertirLista (x:xs)= invertirLista xs ++ [x]
+
+sumaElementosImpares1 []=[]
+sumaElementosImpares1 (x:xs)= 
+
+sumaElementosImpares2

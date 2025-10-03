@@ -158,7 +158,7 @@ promosemanal(X,Y,Z):- producto(X1,X),producto(X2,Y), X1\=X2, precio(X,Y1),precio
 
 % numero natural
 
-numeroNDigitos(X):- X < 10, write(X).
+numeroNDigitos(X):- X < 10, write(X).%escribir
 numeroNDigitos(X):- X >= 10, X1 is X // 10, numeroNDigitos(X1), write('-'), Y is X mod 10, write(Y). 
 
 sumaDeSusDigitos(X,Suma):- X < 10, Suma is X.
@@ -194,5 +194,23 @@ contVecesQueAparece(X,[],N):- N is 0.
 %contVecesQueAparece(X,[T],N):- (X=:=T, N is 1);(X\=T, N is 0).
 contVecesQueAparece(X,[T|H],N):-contVecesQueAparece(X,H,N1), ((X=:=T, N is N1+1);(X\=T, N is N1+0)).
 
-eliminarOcurrencia(X,[]):-.
-eliminarOcurrencia(X,[T|H]):- T=:=X, append()
+
+
+%=:= son iguales igual que ==
+eliminarOcurrencia(X,[],[]).
+eliminarOcurrencia(X, [T|H], Resultado) :-T==X,eliminarOcurrencia(X, H, Resultado).
+eliminarOcurrencia(X,[T|H],[T|RestoR]):- T\=X,eliminarOcurrencia(X,H,RestoR).
+
+
+% caso base: lista vacía
+cambiarOcurrencia(_, [], [], _).
+
+% cabeza = X → reemplazar por K
+cambiarOcurrencia(X, [C|R], [K|Resto], K) :-
+    C == X,                       % si la cabeza es X
+    cambiarOcurrencia(X, R, Resto, K).
+
+% cabeza ≠ X → conservar
+cambiarOcurrencia(X, [C|R], [C|Resto], K) :-
+    C \= X,                      % si la cabeza no es X
+    cambiarOcurrencia(X, R, Resto, K).
