@@ -4,7 +4,7 @@
 //============================================================================
 
 #include <iostream>
-#include "CuentaObjeto.cpp"
+#include "CuentaObjeto.h"
 using namespace std;
 
 int main() {

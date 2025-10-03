@@ -214,3 +214,65 @@ cambiarOcurrencia(X, [C|R], [K|Resto], K) :-
 cambiarOcurrencia(X, [C|R], [C|Resto], K) :-
     C \= X,                      % si la cabeza no es X
     cambiarOcurrencia(X, R, Resto, K).
+
+
+
+
+
+
+
+
+%%% repaso
+
+madress(mauge, rod).
+madress(mauge, todd).
+padress(ned, rod).
+padress(ned, todd).
+
+
+hijos(X,Y):- padress(Y,X).
+progenitorr(X,Y):-padress(Y,X).
+
+
+
+trabajaEn(homero, planta_nuclear).
+trabajaEn(lenny, planta_nuclear).
+trabajaEn(carl, planta_nuclear).
+trabajaEn(marge, escuela).
+trabajaEn(edna, escuela).
+trabajaEn(edna, colegio).
+companerosTrabajo2(X,Y):-trabajaEn(X,Z),trabajaEn(Y,Z), X\=Y.
+trabajannn(X,Y):- trabajaEn(X,Y).
+multitrabajador(X):-trabajaEn(X,Y),trabajaEn(X,Z), Y\=Z.
+
+
+producto(celular, tecnologia, 300).
+producto(tv, tecnologia, 500).
+producto(cartera, moda, 120).
+producto(reloj, moda, 80).
+
+productoCaro(X):- producto(X,Y,Z), Z>200.
+mismoRubro(X,Y):- producto(X,Xx,Z), producto(Y,Yy,Zz), Xx==Yy,X\=Y.
+
+%Regla promo(X,Y,PrecioFinal) con la misma condición que tu ejercicio (segundo al 70% si cumplen requisitos).
+
+longitud([], N):- N is 0.
+longitud([T|H],N):- longitud(H,N1), N is N1+1.
+
+sumaLista([], Suma):- Suma is 0.
+sumaLista([T|H], Suma):- sumaLista(H,Suma1), Suma is Suma1+T.
+
+maximo([], Max):-Max is 0.
+maximo([T|H], Max):-maximo(H,Max1), ((T>=Max1, Max is T);(T<Max1, Max is Max1)). 
+
+todosPares(N):-N<10,  N mod 2=:=0.
+todosPares(N):-N>=10, N1 is N mod 10, N1 mod 2=:=0,N2 is N// 10,todosPares(N2).
+
+ordenada([]):-true.
+
+ordenada([_]):-true.
+ordenada([T,P|H]):-T<P, ordenada([P|H]).
+
+invertir([],[]).
+invertir([T],[T]).
+invertir([T|H],R):-invertir(H,R1), append(R1,[T],R).

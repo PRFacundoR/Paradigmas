@@ -143,7 +143,7 @@ combinarCon2 f1 xs1 xs2
     
 --L
 
-pcdo a = a mod 2 == 0
+pcdo a =  mod a 2 == 0
 
 filtrarLista :: (a -> Bool) -> [a] -> [a]
 filtrarLista pcdo xs1
@@ -175,7 +175,31 @@ invertirLista []=[]
 
 invertirLista (x:xs)= invertirLista xs ++ [x]
 
-sumaElementosImpares1 []=[]
-sumaElementosImpares1 (x:xs)= 
+sumaElementosImpares1 []=0
+sumaElementosImpares1 (x:xs) 
+    |mod x 2 ==1 = x + sumaElementosImpares1 xs 
+    |otherwise= sumaElementosImpares1 xs
 
-sumaElementosImpares2
+sumaElementosImpares2 xs = sum [x | x<- xs,  mod x 2==1]
+
+maximoLista []=0
+maximoLista (x:xs)= if x > maximoLista xs then x  else  maximoLista xs
+
+
+ultimoElemento [x]=x
+ultimoElemento (x:xs)= ultimoElemento xs
+
+rotarLista xs n
+    |null xs=[]
+    |n==0 =xs
+    |otherwise= rotarLista (tail xs) (n-1)++ [(head xs)]
+
+todoPares xs= and [mod x 2==0| x<- xs ]
+
+contarApariciones [] x= 0
+contarApariciones (x:xs) x1 = if x==x1 then 1 + contarApariciones xs x else contarApariciones xs x
+
+
+duplicarElementos []=[]
+duplicarElementos (x:xs)= [x]++ [x] ++ duplicarElementos xs
+
