@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/Facu/Downloads/Facultad/Paradigmas1/Practica/Tp-7/tp7/ejercicio3", 
+      
+      // La ruta del programa debe reflejar la subcarpeta correcta y usar .exe en Windows
+      "program": "c:/Users/Facu/Downloads/Facultad/Paradigmas1/Practica/Tp-7/tp7/ejercicio3/build/Debug/outDebug.exe", // <--- Agregando el .exe
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

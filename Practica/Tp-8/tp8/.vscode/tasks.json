@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: G++ Compilar Proyecto Completo",
+            "command": "C:\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g", 
+                // 1. Compilar todos los archivos .cpp de la carpeta raíz
+                "${workspaceFolder}/*.cpp", 
+                // 2. Establecer la ruta y el nombre del ejecutable que espera el depurador
+                "-o",
+                "${workspaceFolder}/build/Debug/outDebug.exe" 
+            ],
+            "options": {
+                // El CWD debe ser la carpeta raíz del proyecto (donde están los .cpp)
+                "cwd": "${workspaceFolder}" 
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compila todos los archivos del proyecto."
+        }
+    ]
+}
