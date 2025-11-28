@@ -20,9 +20,9 @@ int Alquiler::getCantidadMeses()
     return anios*12+mes;
 }
 
-Alquiler::Alquiler(int codigo, int idCliente, const Fecha & fechaInicio, const Fecha & fechaFin, Inmueble *inmueble)
+Alquiler::Alquiler(int codigo, int idCliente,  Fecha  fechaInicio,  Fecha  fechaFin, Inmueble *inmueble)
 {
-    this->codigo=codigo;
+    this->codigo=codigo;// la profe no usa const ni & en constructores y usa autoincremental
     this->idCliente=idCliente;
     this->fechaInicio=fechaInicio;
     this->fechaFin=fechaFin;
@@ -41,7 +41,7 @@ void Alquiler::listarInformacion()
     cout<<"fecha inicio: "<<fechaInicio<<endl;
     cout<<"fecha fin: "<<fechaFin<<endl;
     cout<<endl<< "Informacion del inmueble"<<endl;
-     if (this->inmueble != nullptr)
+         if (this->inmueble != nullptr)
     {
         // Línea descomentada y protegida
     cout<<"Codigo del inmueble: "<<this->inmueble->getCodigo()<<endl; 

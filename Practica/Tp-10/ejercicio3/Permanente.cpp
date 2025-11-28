@@ -1,6 +1,6 @@
 #include "Permanente.h"
 
-Permanente::Permanente(int codigo, int idCliente, const Fecha& fechaInicio, const Fecha& fechaFin, Inmueble *inmueble):Alquiler(codigo,idCliente,fechaInicio,fechaFin,inmueble){
+Permanente::Permanente(int codigo, int idCliente,  Fecha fechaInicio,  Fecha fechaFin, Inmueble *inmueble):Alquiler(codigo,idCliente,fechaInicio,fechaFin,inmueble){
 
 
 }

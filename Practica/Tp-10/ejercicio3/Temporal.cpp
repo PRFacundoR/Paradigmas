@@ -2,7 +2,7 @@
 
 const double Temporal:: INTERES_MENSUAL=0.015;
 
-Temporal::Temporal(int codigo, int idCliente, const Fecha& fechaInicio, const Fecha& fechaFin, Inmueble *inmbueble):Alquiler(codigo,idCliente,fechaInicio,fechaFin,inmueble)
+Temporal::Temporal(int codigo, int idCliente,  Fecha fechaInicio,  Fecha fechaFin, Inmueble *inmbueble):Alquiler(codigo,idCliente,fechaInicio,fechaFin,inmueble)
 {
 }
 

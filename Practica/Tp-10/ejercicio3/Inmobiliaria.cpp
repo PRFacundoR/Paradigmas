@@ -20,7 +20,7 @@ Inmobiliaria::~Inmobiliaria()
          << "se borro la inmobiliaria" << endl;
 }
 
-Alquiler *Inmobiliaria::alquilar(int codigo, int idCliente, const Fecha &Inicio, const Fecha & Fin, Inmueble *inmueble)
+Alquiler *Inmobiliaria::alquilar(int codigo, int idCliente, Fecha Inicio, Fecha  Fin, Inmueble *inmueble)
 {
     Alquiler *nuevoAlquiler;
     int anios;

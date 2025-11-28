@@ -20,8 +20,8 @@ protected:
 public:
     Alquiler(int codigo,
     int idCliente,
-    const Fecha & fechaInicio,
-    const Fecha & fechaFin,Inmueble* inmueble);
+     Fecha fechaInicio,
+     Fecha fechaFin,Inmueble* inmueble);
     virtual ~Alquiler();
 
     virtual double calcularCosto()=0;

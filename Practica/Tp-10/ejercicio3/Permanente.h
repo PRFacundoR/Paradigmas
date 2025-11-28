@@ -11,8 +11,8 @@ class Permanente: public Alquiler
 public:
     Permanente(int codigo,
     int idCliente,
-    const Fecha& fechaInicio,
-    const Fecha& fechaFin,Inmueble* inmbueble);
+     Fecha fechaInicio,
+     Fecha fechaFin,Inmueble* inmbueble);
     ~Permanente();
 
     double calcularCosto();

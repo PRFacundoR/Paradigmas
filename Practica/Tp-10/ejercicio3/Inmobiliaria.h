@@ -24,8 +24,8 @@ public:
 
     Alquiler* alquilar(int codigo,
     int idCliente,
-   const Fecha & fechaInicio,
-    const Fecha & fechaFin,Inmueble* inmueble);
+    Fecha  fechaInicio,
+     Fecha fechaFin,Inmueble* inmueble);
 
     void resumen();
 };
