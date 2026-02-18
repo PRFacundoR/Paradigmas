@@ -2,6 +2,7 @@
 #define ITEM_H_
 #include <iostream>
 #include "Producto.h"
+#include "Fecha.h"
 
 using namespace std;
 class Item
